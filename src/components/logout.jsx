@@ -8,3 +8,9 @@ const Logout = () => {
       console.log('Logged out!');
       setIsConfirming(false);
     };
+    return (
+        <div>
+          <button onClick={() => setIsConfirming(true)}>Logout</button>
+          {isConfirming && (
+            <div>
+              <p>Are you sure you want to logout?</p>
