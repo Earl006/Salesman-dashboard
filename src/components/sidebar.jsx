@@ -29,4 +29,21 @@ const Sidebar = () => {
           return null;
       }
     };
+    return (
+        <div className="sidebar">
+          <button onClick={() => setCurrentPage('dashboard')}>
+            <i className="fa fa-dashboard"></i> Dashboard
+          </button>
+          <button onClick={() => setCurrentPage('user-management')}>
+            <i className="fa fa-users"></i> User Management
+          </button>
+          {}
+          <button onClick={() => setCurrentPage('logout')}>
+            <i className="fa fa-sign-out"></i> Logout
+          </button>
+          <div className="content">{renderPage()}</div>
+        </div>
+      );
+    };
     
+    export default Sidebar;
