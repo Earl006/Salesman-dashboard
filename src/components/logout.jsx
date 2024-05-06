@@ -14,3 +14,12 @@ const Logout = () => {
           {isConfirming && (
             <div>
               <p>Are you sure you want to logout?</p>
+              <button onClick={handleLogout}>Yes</button>
+          <button onClick={() => setIsConfirming(false)}>No</button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Logout;
