@@ -3,7 +3,7 @@ import { CssBaseline, ThemeProvider } from '@mui/material';
 import Topbar from './global/Topbar';
 // import { Login } from '@mui/icons-material';
 import Login from './components/Login';
-
+import Sidebar from './components/Sidebar';
 function App() {
   const { theme, colorMode } = useMode(); 
   
@@ -13,8 +13,8 @@ function App() {
         <CssBaseline />
         <div className="app">
           <main className='content'>
-            
-           <Login />  
+            <Sidebar />
+           {/* <Login />   */}
           </main>
         </div>
       </ThemeProvider>

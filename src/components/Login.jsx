@@ -25,8 +25,8 @@ const Login = () => {
             <Topbar />
 
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', margin: '5px'}}>
-                <Card style={{ width: '450px',height: '300px', padding: '20px' }}>
-                    <CardContent>
+                <Card style={{ width: '450px', padding: '20px' }}>
+                    <CardContent >
                         <h1 className="text-2xl mb-4">Login</h1>
                         <form onSubmit={handleSubmit}>
                             <div className="mb-4">
@@ -52,11 +52,12 @@ const Login = () => {
                                     required
                                 />
                             </div>
-                            <div className="flex items-center justify-end">
+                            <div className="mb-4">
                                 <Button
                                     variant="contained"
                                     color="primary"
                                     type="submit"
+                                    fullWidth
                                 >
                                     Login
                                 </Button>
