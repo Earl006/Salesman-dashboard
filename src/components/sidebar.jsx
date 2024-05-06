@@ -11,8 +11,22 @@ const Sidebar = () => {
           return <Dashboard />;
         case 'user-management':
           return <UserManagement />;
-        // Add cases for other pages
+        case 'dashboard':
+          return <Clients />;
+        case 'dashboard':
+          return <Products />;
+        case 'dashboard':
+          return <TaskManagement />;
+        case 'dashboard':
+          return <VisitPlanning />;
+        case 'dashboard':
+          return <Performance />;
+        case 'dashboard':
+          return <Feedback />;
+        case 'dashboard':
+          return <Orders />;
         default:
           return null;
       }
     };
+    
