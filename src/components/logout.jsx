@@ -13,9 +13,9 @@ const Logout = () => {
           <button onClick={() => setIsConfirming(true)}>Logout</button>
           {isConfirming && (
             <div>
-              <p>Are you sure you want to logout?</p>
-              <button onClick={handleLogout}>Yes</button>
-          <button onClick={() => setIsConfirming(false)}>No</button>
+              <p>Are you certain you wish to logout?</p>
+              <button onClick={handleLogout}>Log Out</button>
+          <button onClick={() => setIsConfirming(false)}>Cancel</button>
         </div>
       )}
     </div>
