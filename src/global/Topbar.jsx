@@ -14,7 +14,12 @@ const Topbar = () => {
   };
 
   return (
-    <Box>
+    <Box
+      display="flex"
+      justifyContent="flex-end" // Align items to the start of the flex container (left)
+      alignItems="center" // Center items vertically within the flex container
+      p={1} // Add padding for spacing
+    >
       <IconButton onClick={handleToggleColorMode}>
         {theme.palette.mode === "dark" ? (
           <DarkModeOutlinedIcon />
