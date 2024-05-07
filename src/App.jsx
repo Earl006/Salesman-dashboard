@@ -1,6 +1,6 @@
 import { ColorModeContext, useMode } from './theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import Topbar from './global/Topbar'
+import Topbar from './global/Topbar';
 import Login from './components/Login';
 import Sidebar from './components/Sidebar';
 import UserManagement from './UserManagement/UserManagement';
@@ -9,7 +9,7 @@ import Products from './Products/Products';
 // import Orders from './Orders/Orders';
 // import Performance from './Performance/Performance';
 // import Feedback from './Feedback/Feedback';
-// import VisitPlanning from './Visit Planning/VisitPlanning';
+import VisitsPlanning from './VisitsPlanning/VisitsPlanning';
  import TaskManagement from './Task Management/TaskManagement';
  import { Routes, Route } from 'react-router-dom';
 
@@ -23,7 +23,6 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          <Sidebar />
           <main className="content">
           <Topbar />
             <Routes>
@@ -31,10 +30,10 @@ function App() {
             <Route path="/clients" element={<Clients />} />
             <Route path="/products" element={<Products />} />
             <Route path="/tasks" element={<TaskManagement />} />
-            {/* <Route path="/visits" element={<VisitPlanning />} />
-            <Route path="/performance" element={<Performance />} />
-            <Route path="/feedback" element={<Feedback />} />
-            <Route path="/orders" element={<Orders />} /> */}
+            <Route path="/visits" element={<VisitsPlanning />} />
+            {/* // <Route path="/performance" element={<Performance />} />
+            // <Route path="/feedback" element={<Feedback />} />
+            // <Route path="/orders" element={<Orders />} /> */} 
            {/* <Login />   */}
            </Routes>
           </main>

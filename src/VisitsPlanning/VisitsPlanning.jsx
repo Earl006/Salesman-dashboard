@@ -48,9 +48,9 @@ const VisitsPlanning = () => {
 
     return (
         <>
-        <Sidebar />
+       
         <Box sx={{ display: 'flex', width: '100%' }}>
-            
+        <Sidebar />
             <Box sx={{ flex: 1, marginLeft: '250px', padding: '20px' }}>
                 <Box
                     flex="1 1 20%"
