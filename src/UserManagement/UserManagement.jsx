@@ -2,6 +2,8 @@ import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../theme";
 import Sidebar from "../components/Sidebar";
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 
 const UserManagement = () => {
@@ -16,6 +18,7 @@ const UserManagement = () => {
         { field: "role", headerName: "Role", flex: 0.5 },
         { field: "address", headerName: "Address", flex: 0.5 },
         { field: "action", headerName: "Action", flex: 1 }
+        
     ];
 
     const rows = []; 

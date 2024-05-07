@@ -10,7 +10,7 @@ import Products from './Products/Products';
 // import Performance from './Performance/Performance';
 // import Feedback from './Feedback/Feedback';
 // import VisitPlanning from './Visit Planning/VisitPlanning';
-// import TaskManagement from './Task Management/TaskManagement';
+ import TaskManagement from './Task Management/TaskManagement';
  import { Routes, Route } from 'react-router-dom';
 
 
@@ -23,8 +23,18 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          <main className='content'>
-            <UserManagement />
+          <Sidebar />
+          <main className="content">
+          <Topbar />
+            <Routes>
+            <Route path="/manage-users" element={<UserManagement />} />
+            <Route path="/clients" element={<Clients />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/tasks" element={<TaskManagement />} />
+            {/* <Route path="/visits" element={<VisitPlanning />} />
+            <Route path="/performance" element={<Performance />} />
+            <Route path="/feedback" element={<Feedback />} />
+            <Route path="/orders" element={<Orders />} /> */}
            {/* <Login />   */}
            </Routes>
           </main>
