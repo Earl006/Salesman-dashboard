@@ -14,7 +14,6 @@ function App() {
         <CssBaseline />
         <div className="app">
           <main className='content'>
-            <Sidebar />
             <UserManagement />
            {/* <Login />   */}
           </main>
