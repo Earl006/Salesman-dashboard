@@ -25,9 +25,9 @@ const Clients = () => {
         <Box sx={{ display: 'flex', width: '100%' }}>
             <Sidebar />
             <Box sx={{ flex: 1, marginLeft: '250px', padding: '20px' }}>
-                <Typography variant="h4">Clients List Display</Typography>
+                <Typography variant="h5">Clients List Display</Typography>
                 {/* <Typography variant="subtitle1">User List Display</Typography> */}
-                <Box sx={{ width: '100%', height: 'calc(100vh - 128px)', marginTop: '20px' }}>
+                <Box sx={{ width: '95%', height: 'calc(100vh - 128px)', marginTop: '20px' }}>
                     <DataGrid rows={rows} columns={columns} />
                 </Box>
             </Box>

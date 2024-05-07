@@ -5,7 +5,7 @@ import Login from './components/Login';
 import Sidebar from './components/Sidebar';
 import UserManagement from './UserManagement/UserManagement';
 import Clients from './Clients/Clients';
-// import Products from './Products/Products';
+import Products from './Products/Products';
 // import Orders from './Orders/Orders';
 // import Performance from './Performance/Performance';
 // import Feedback from './Feedback/Feedback';
@@ -29,9 +29,9 @@ function App() {
             <Routes>
             {/* <Route path="/" element={<Dashboard />} /> */}
             <Route path="/manage-users" element={<UserManagement />} />
-             <Route path="/clients" element={<Clients />} />
-            {/*<Route path="/products" element={<Products />} />
-            <Route path="/tasks" element={<TaskManagement />} />
+            <Route path="/clients" element={<Clients />} />
+            <Route path="/products" element={<Products />} />
+            {/* <Route path="/tasks" element={<TaskManagement />} />
             <Route path="/visits" element={<VisitPlanning />} />
             <Route path="/performance" element={<Performance />} />
             <Route path="/feedback" element={<Feedback />} />
