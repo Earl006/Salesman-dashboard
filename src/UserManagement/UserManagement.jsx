@@ -17,7 +17,7 @@ const UserManagement = () => {
         { field: "action", headerName: "Action", flex: 1 }
     ];
 
-    const rows = []; // Assuming you have data for rows
+    const rows = []; 
 
     return (
         <Box sx={{ display: 'flex', width: '100%' }}>

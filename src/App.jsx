@@ -5,6 +5,7 @@ import Topbar from './global/Topbar';
 import Login from './components/Login';
 import Sidebar from './components/Sidebar';
 import UserManagement from './UserManagement/UserManagement'
+import VisitsPlanning from './VisitsPlanning/VisitsPlanning';
 function App() {
   const { theme, colorMode } = useMode(); 
   
@@ -14,7 +15,8 @@ function App() {
         <CssBaseline />
         <div className="app">
           <main className='content'>
-            <UserManagement />
+            <VisitsPlanning/>
+            {/* <UserManagement /> */}
            {/* <Login />   */}
           </main>
         </div>
