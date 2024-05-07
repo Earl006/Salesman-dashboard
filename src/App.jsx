@@ -1,11 +1,20 @@
 import { ColorModeContext, useMode } from './theme';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import Topbar from './global/Topbar';
-// import { Login } from '@mui/icons-material';
+import Topbar from './global/Topbar'
 import Login from './components/Login';
 import Sidebar from './components/Sidebar';
-import UserManagement from './UserManagement/UserManagement'
-import VisitsPlanning from './VisitsPlanning/VisitsPlanning';
+import UserManagement from './UserManagement/UserManagement';
+import Clients from './Clients/Clients';
+import Products from './Products/Products';
+// import Orders from './Orders/Orders';
+// import Performance from './Performance/Performance';
+// import Feedback from './Feedback/Feedback';
+// import VisitPlanning from './Visit Planning/VisitPlanning';
+// import TaskManagement from './Task Management/TaskManagement';
+ import { Routes, Route } from 'react-router-dom';
+
+
+
 function App() {
   const { theme, colorMode } = useMode(); 
   
@@ -15,9 +24,9 @@ function App() {
         <CssBaseline />
         <div className="app">
           <main className='content'>
-            <VisitsPlanning/>
-            {/* <UserManagement /> */}
+            <UserManagement />
            {/* <Login />   */}
+           </Routes>
           </main>
         </div>
       </ThemeProvider>
