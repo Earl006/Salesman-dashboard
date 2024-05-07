@@ -1,19 +1,18 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../theme";
-import Sidebar from "../components/Sidebar";
 
 const UserManagement = () => {
     const theme = useTheme();
-    const colorMode = tokens(theme.palette.colorMode);
+    const colors = tokens(theme.palette.colorMode);
 
     const columns = [
         { field: "id", headerName: "ID" },
-        { field: "name", headerName: "Name", flex: 1, cellClassName: "name-column--cell" },
-        { field: "email", headerName: "Email", flex: 1 },
-        { field: "phone", headerName: "Phone Number", flex: 1 },
-        { field: "role", headerName: "Role", flex: 1 },
-        { field: "address", headerName: "Address", flex: 1 },
+        { field: "name", headerName: "Name", flex: 0.5, cellClassName: "name-column--cell" },
+        { field: "email", headerName: "Email", flex: 0.5 },
+        { field: "phone", headerName: "Phone Number", flex: 0.5 },
+        { field: "role", headerName: "Role", flex: 0.5 },
+        { field: "address", headerName: "Address", flex: 0.5 },
         { field: "action", headerName: "Action", flex: 1 }
     ];
 
