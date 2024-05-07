@@ -14,6 +14,7 @@ import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlin
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined'; // For logout icon
 import Logo from '../assets/sales-logo.jpeg'; // Import your logo file
 import Topbar from '../global/Topbar';
+import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
 
 const Item = ({ icon, text, to, selected, setSelected }) => {
   return (
@@ -78,6 +79,13 @@ const Sidebar = () => {
               icon={<HomeOutlinedIcon />}
               text="Dashboard"
               to="/"
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              icon={<ManageAccountsOutlinedIcon />}
+              text="User Management"
+              to="/manage-users"
               selected={selected}
               setSelected={setSelected}
             />
