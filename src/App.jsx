@@ -12,7 +12,7 @@ import Products from './Products/Products';
 import VisitsPlanning from './VisitsPlanning/VisitsPlanning';
  import TaskManagement from './Task Management/TaskManagement';
  import { Routes, Route } from 'react-router-dom';
-
+// import { Dashboard } from '@mui/icons-material';
 
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
           <main className="content">
           <Topbar />
             <Routes>
+            {/* <Route path='/' element={<Dashboard />} /> */}
             <Route path="/manage-users" element={<UserManagement />} />
             <Route path="/clients" element={<Clients />} />
             <Route path="/products" element={<Products />} />
