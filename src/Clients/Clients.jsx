@@ -1,11 +1,13 @@
-import { Box, Typography, useTheme } from "@mui/material";
+import { Box, Typography, useTheme, Button } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../theme";
 import Sidebar from "../components/Sidebar";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 
-
+const handleAddUser = () => {
+    // Add your logic here
+}
 const Clients = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.colorMode);
