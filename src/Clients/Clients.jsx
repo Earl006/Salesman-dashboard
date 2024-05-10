@@ -46,7 +46,7 @@ const Clients = () => {
         console.log(formData);
         setFormData({
             fullName: '',
-            mobile: '',
+            mobileNumber: '',
             address: '',
             preferredBrands: '',
             type: '',
@@ -93,6 +93,94 @@ const Clients = () => {
                         <Button variant="contained" color="primary" sx={{ mr: 1 }} onClick={handleAddUserClick}>
                             Add New Client
                         </Button>
+                        <Modal
+                open={showAddForm}
+                onClose={handleCloseForm}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: 400,
+                        bgcolor: 'background.paper',
+                        boxShadow: 24,
+                        p: 4,
+                    }}
+                >
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                        Add New Client
+                    </Typography>
+                    <form onSubmit={handleSubmit}>
+                        <TextField
+                            label="FULL NAME"
+                            name="fullName"
+                            value={formData.fullName}
+                            onChange={handleChange}
+                            fullWidth
+                            margin="normal"
+                        />
+                        <TextField
+                            label="MOBILE NUMBER"
+                            name="mobileNumber"
+                            value={formData.mobileNumber}
+                            onChange={handleChange}
+                            fullWidth
+                            margin="normal"
+                        />
+                        <TextField
+                            label="ADDRESS"
+                            name="address"
+                            value={formData.address}
+                            onChange={handleChange}
+                            fullWidth
+                            margin="normal"
+                        />
+                        <TextField
+                            label="PREFERRED BRAND"
+                            name="preferredBrands"
+                            value={formData.preferredBrands}
+                            onChange={handleChange}
+                            fullWidth
+                            margin="normal"
+                        />
+                        <TextField
+                            label="TYPE"
+                            name="type"
+                            value={formData.type}
+                            onChange={handleChange}
+                            fullWidth
+                            margin="normal"
+                        />
+                        <TextField
+                            label="SALESMAN"
+                            name="salesman"
+                            value={formData.salesman}
+                            onChange={handleChange}
+                            fullWidth
+                            margin="normal"
+                        />
+                        <TextField
+                            label="QR CODE"
+                            name="qrCode"
+                            value={formData.qrCode}
+                            onChange={handleChange}
+                            fullWidth
+                            margin="normal"
+                        />
+                        {/* Add more text fields for other form inputs */}
+                        <Box sx={{ textAlign: 'center', marginTop: '20px' }}>
+                            <Button type="submit" variant="contained" color="primary" sx={{ mr: 2 }}>
+                                Add New Client
+                            </Button>
+                            <Button variant="outlined" onClick={handleCloseForm}>Cancel</Button>
+                        </Box>
+                    </form>
+                </Box>
+            </Modal>
                     </Box>
                 </Box>
                 <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '10px' }}>

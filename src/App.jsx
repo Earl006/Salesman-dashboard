@@ -13,6 +13,7 @@ import VisitsPlanning from './VisitsPlanning/VisitsPlanning';
  import TaskManagement from './Task Management/TaskManagement';
  import { Routes, Route } from 'react-router-dom';
 // import { Dashboard } from '@mui/icons-material';
+// import QRCodeReader from './QRCodeReader';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
         <div className="app">
           <main className="content">
           <Topbar />
+          {/* <QRCodeReader /> */}
             <Routes>
             {/* <Route path='/' element={<Dashboard />} /> */}
             <Route path="/manage-users" element={<UserManagement />} />
