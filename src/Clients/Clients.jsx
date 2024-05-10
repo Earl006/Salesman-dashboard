@@ -1,7 +1,7 @@
 
 
 import { useState } from 'react';
-import { Box, Typography, useTheme, IconButton, Button, InputAdornment, TextField, Slide, FormControl, InputLabel, Select, MenuItem } from "@mui/material";
+import { Box, Typography, useTheme, IconButton, Button, InputAdornment, TextField, Slide, FormControl, InputLabel, Select, MenuItem, Modal, Backdrop, Fade } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../theme";
 import Sidebar from "../components/Sidebar";
@@ -12,13 +12,50 @@ import SearchIcon from '@mui/icons-material/Search';
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import DownloadIcon from '@mui/icons-material/Download';
 
-const handleAddUser = () => {
-    // Add your logic here
-}
 
 const Clients = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.colorMode);
+
+    const [showAddForm, setShowAddForm] = useState(false);
+    const [formData, setFormData] = useState({
+        fullName: '',
+        mobile: '',
+        address: '',
+        preferredBrands: '',
+        type: '',
+        salesman: '',
+        qrCode: ''
+    });
+
+    const handleAddUserClick = () => {
+        setShowAddForm(true);
+    };
+  
+    const handleCloseForm = () => {
+        setShowAddForm(false);
+    };
+  
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+  
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(formData);
+        setFormData({
+            fullName: '',
+            mobile: '',
+            address: '',
+            preferredBrands: '',
+            type: '',
+            salesman: '',
+            qrCode: ''
+        });
+        
+        handleCloseForm();
+    };
 
     const columns = [
         { field: "name", headerName: "NAME", flex: 0.5, cellClassName: "name-column--cell" },
@@ -53,7 +90,7 @@ const Clients = () => {
                     <IconButton>
                             <NotificationsIcon />
                         </IconButton>
-                        <Button variant="contained" color="primary" sx={{ mr: 1 }} onClick={handleAddUser}>
+                        <Button variant="contained" color="primary" sx={{ mr: 1 }} onClick={handleAddUserClick}>
                             Add New Client
                         </Button>
                     </Box>
