@@ -26,7 +26,7 @@ const Products = () => {
             <Sidebar />
             <Box sx={{ flex: 1, marginLeft: '250px', padding: '20px' }}>
                 <Typography variant="h5">Product List </Typography>
-                {/* <Typography variant="subtitle1">User List Display</Typography> */}
+                <Typography variant="subtitle1">Product List </Typography> 
                 <Box sx={{ width: '95%', height: 'calc(100vh - 128px)', marginTop: '20px' }}>
                     <DataGrid rows={rows} columns={columns} />
                 </Box>

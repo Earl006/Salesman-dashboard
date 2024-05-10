@@ -8,7 +8,7 @@ import Clients from './Clients/Clients';
 import Products from './Products/Products';
 // import Orders from './Orders/Orders';
 // import Performance from './Performance/Performance';
-// import Feedback from './Feedback/Feedback';
+ import Feedback from './Feedback/Feedback';
 import VisitsPlanning from './VisitsPlanning/VisitsPlanning';
  import TaskManagement from './Task Management/TaskManagement';
  import { Routes, Route } from 'react-router-dom';
@@ -32,8 +32,8 @@ function App() {
             <Route path="/products" element={<Products />} />
             <Route path="/tasks" element={<TaskManagement />} />
             <Route path="/visits" element={<VisitsPlanning />} />
+            <Route path="/feedback" element={<Feedback />} />
             {/* // <Route path="/performance" element={<Performance />} />
-            // <Route path="/feedback" element={<Feedback />} />
             // <Route path="/orders" element={<Orders />} /> */} 
            {/* <Login />   */}
            </Routes>

@@ -1,9 +1,10 @@
-import { Box, Typography, useTheme, Button } from "@mui/material";
+import { Box, Typography, useTheme, IconButton, Button } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../theme";
 import Sidebar from "../components/Sidebar";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditNoteIcon from '@mui/icons-material/EditNote';
+import NotificationsIcon from '@mui/icons-material/Notifications';
 
 const handleAddUser = () => {
     // Add your logic here
@@ -30,6 +31,10 @@ const Clients = () => {
             <Sidebar />
             <Box sx={{ flex: 1, marginLeft: '250px', padding: '20px' }}>
                 <Typography variant="h5">Clients List Display</Typography>
+                
+          <IconButton>
+          <NotificationsIcon />
+          </IconButton>
                 <Button variant="contained" color="primary" onClick={handleAddUser}>
                     Add New Client
                 </Button>
@@ -37,6 +42,7 @@ const Clients = () => {
                     <DataGrid rows={rows} columns={columns} />
                 </Box>
             </Box>
+        {/* </Box> */}
         </Box>
     );
 };
