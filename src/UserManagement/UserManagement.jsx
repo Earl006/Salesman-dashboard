@@ -115,13 +115,17 @@ const UserManagement = () => {
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <Typography variant="h5">User Management</Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                    {/* <Box sx={{ display: 'flex', alignItems: 'center', mr: 2 }}></Box> */}
                     <IconButton>
                             <NotificationsIcon />
                         </IconButton>
                         <Button variant="contained" color="primary" sx={{ mr: 1 }} onClick={handleAddUserClick}>
                             Add New Client
                         </Button>
+                        <br />
                         <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                        {/* <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginBottom: '20px' }}> */}
+
             {/* Search icon */}
             <IconButton>
                 <SearchIcon />
