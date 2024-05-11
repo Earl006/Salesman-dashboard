@@ -1,7 +1,7 @@
 
 
 import { useState } from 'react';
-import { Box, Typography, useTheme, IconButton, Button, InputAdornment, TextField, Slide, FormControl, InputLabel, Select, MenuItem, Modal, Backdrop, Fade } from "@mui/material";
+import { Box, Typography, useTheme, IconButton, Button, InputAdornment, TextField, Slide, FormControlLabel, Checkbox, InputLabel, Select, MenuItem, Modal } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../theme";
 import Sidebar from "../components/Sidebar";
@@ -301,27 +301,18 @@ const Clients = () => {
                     >
                         <Typography variant="h6">Filter Options</Typography>
                         <Box sx={{ mt: 2 }}>
-                            <FormControl fullWidth sx={{ mb: 2 }}>
-                                <InputLabel id="filter-address-label">Filter by Address</InputLabel>
-                                <Select labelId="filter-address-label" id="filter-address" value={''} onChange={() => {}}>
-                                    <MenuItem value="">All</MenuItem>
-                                    
-                                </Select>
-                            </FormControl>
-                            <FormControl fullWidth sx={{ mb: 2 }}>
-                                <InputLabel id="filter-brand-label">Filter by Brands</InputLabel>
-                                <Select labelId="filter-brand-label" id="filter-brand" value={''} onChange={() => {}}>
-                                    <MenuItem value="">All</MenuItem>
-                                  
-                                </Select>
-                            </FormControl>
-                            <FormControl fullWidth>
-                                <InputLabel id="filter-status-label">Filter by Status</InputLabel>
-                                <Select labelId="filter-status-label" id="filter-status" value={''} onChange={() => {}}>
-                                    <MenuItem value="">All</MenuItem>
-    
-                                </Select>
-                            </FormControl>
+                        <FormControlLabel
+                                control={<Checkbox />}
+                                label="Filter by Address"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="Filter by Brands"
+                            />
+                            <FormControlLabel
+                                control={<Checkbox />}
+                                label="Date of Status"
+                            />
                         </Box>
                         <Box sx={{ mt: 2, display: 'flex', justifyContent: 'space-between' }}>
                             <Button onClick={handleCloseFilter}>Clear All</Button>
