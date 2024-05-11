@@ -18,13 +18,13 @@ const Clients = () => {
     const colors = tokens(theme.palette.colorMode);
     const [selectedRow, setSelectedRow] = useState(null);
 
-    const handleEdit = (row) => {
-        setSelectedRow(row);
+    const handleEdit = (id) => {
+        setSelectedRow(id);
     };
 
     // Function to handle the delete action
-    const handleDelete = (row) => {
-    
+    const handleDelete = (id) => {
+        setSelectedRow(id);
     };
 
     // Function to handle canceling the edit
@@ -85,7 +85,17 @@ const Clients = () => {
         { field: "preferred brand", headerName: "PREFERRED BRAND", flex: 0.5 },
         { field: "salesman as", headerName: "SALESMAN AS", flex: 0.5 },
         { field: "rating", headerName: "RATING", flex: 1 },
-        { field: "qr", headerName: "QR", flex: 1 }
+        { field: "qr", headerName: "QR", flex: 1 },
+        { field: "", flex: 1, renderCell: (params) => (
+            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <IconButton onClick={() => handleEdit(params.id)}>
+                    <EditNoteIcon />
+                </IconButton>
+                <IconButton onClick={() => handleDelete(params.id)}>
+                    <DeleteIcon />
+                </IconButton>
+            </Box>
+        ) }
     ];
 
     const rows = []; // Assuming you have data for rows
