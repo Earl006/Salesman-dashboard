@@ -16,6 +16,26 @@ import DownloadIcon from '@mui/icons-material/Download';
 const Clients = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.colorMode);
+    const [selectedRow, setSelectedRow] = useState(null);
+
+    const handleEdit = (row) => {
+        setSelectedRow(row);
+    };
+
+    // Function to handle the delete action
+    const handleDelete = (row) => {
+    
+    };
+
+    // Function to handle canceling the edit
+    const handleCancelEdit = () => {
+        setSelectedRow(null);
+    };
+
+    // Function to handle saving the edits
+    const handleSaveEdit = () => {
+        setSelectedRow(null); // Reset selected row after saving
+    };
 
     const [showAddForm, setShowAddForm] = useState(false);
     const [formData, setFormData] = useState({
@@ -207,8 +227,54 @@ const Clients = () => {
                     </Box>
                 </Box>
                 <Box sx={{ width: '95%', height: 'calc(100vh - 260px)', marginTop: '20px' }}>
-                    <DataGrid rows={rows} columns={columns} />
+                    {/* <DataGrid rows={rows} columns={columns} /> */}
+                    
+                    <DataGrid
+                        rows={rows}
+                        columns={columns}                        
+                        onRowEdit={handleEdit}
+                        components={{
+                            Toolbar: () => (
+                                <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                </Box>
+                            ),
+                        }}
+                    />
                 </Box>
+                {selectedRow && (
+    <Box sx={{ marginTop: '20px' }}>
+        <Typography variant="h6">Edit Client</Typography>
+        <TextField
+            label="Name"
+            defaultValue={selectedRow.name}
+            fullWidth
+            margin="normal"
+        />
+        <TextField
+            label="Address"
+            defaultValue={selectedRow.address}
+            fullWidth
+            margin="normal"
+        />
+        <TextField
+            label="Phone"
+            defaultValue={selectedRow.phone}
+            fullWidth
+            margin="normal"
+        />
+        <TextField
+            label="Preferred Brand"
+            defaultValue={selectedRow.preferredBrand}
+            fullWidth
+            margin="normal"
+        />
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
+            <Button variant="outlined" onClick={handleCancelEdit}>Cancel</Button>
+            <Button variant="contained" color="primary" onClick={handleSaveEdit}>Save</Button>
+        </Box>
+    </Box>
+)}
+
                 <Slide direction="left" in={openFilter} mountOnEnter unmountOnExit>
                     <Box
                         sx={{
