@@ -115,7 +115,7 @@ const UserManagement = () => {
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                     <Typography variant="h5">User Management</Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    {/* <Box sx={{ display: 'flex', alignItems: 'center', mr: 2 }}></Box> */}
+                    
                     <IconButton>
                             <NotificationsIcon />
                         </IconButton>
@@ -123,7 +123,8 @@ const UserManagement = () => {
                             Add New Client
                         </Button>
                         <br />
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                        {/* <Box sx={{ display: 'flex', alignItems: 'center' }}> */}
+                        <Box sx={{ display: 'flex', justifyContent: 'right', alignItems: 'center', marginBottom: '20px' }}>
                         {/* <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', marginBottom: '20px' }}> */}
 
             {/* Search icon */}
