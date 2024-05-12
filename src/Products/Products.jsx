@@ -8,7 +8,7 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import DownloadIcon from '@mui/icons-material/Download';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditNoteIcon from '@mui/icons-material/EditNote';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ProductDetailsForm from "../components/ProductDetailsForm";
 
 const Products = () => {
@@ -17,8 +17,8 @@ const Products = () => {
     const [selectedRow, setSelectedRow] = useState(null);
     const [openModal, setOpenModal] = useState(false);
 
-    const handleRowClick = (id) => {
-        setSelectedRow(id);
+    const handleRowClick = (params) => {
+        setSelectedRow(params.id);
         setOpenModal(true);
     };
 
@@ -88,8 +88,11 @@ const Products = () => {
                 </Box>
                 {/* DataGrid for displaying products */}
                 <Box sx={{ width: '95%', height: 'calc(100vh - 180px)', marginTop: '20px' }}>
-                    <DataGrid rows={rows} columns={columns} />
+                    <DataGrid rows={rows} columns={columns} onRowClick={handleRowClick} />
                 </Box>
+                
+            <ProductDetailsForm open={openModal} handleClose={handleCloseModal} /> 
+                
             </Box>
         </Box>
     );
