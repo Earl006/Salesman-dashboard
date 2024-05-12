@@ -23,9 +23,11 @@ const Products = () => {
 
 
     const handleRowClick = (params) => {
-        setSelectedRow(params.id);
+        const { img } = params;
+        setSelectedRow(img);
         setOpenModal(true);
     };
+    
 
     const handleCloseModal = () => {
         setOpenModal(false);
@@ -41,7 +43,7 @@ const Products = () => {
     };
 
     const columns = [
-        { field: "img", headerName: "IMG", flex: 0.6, cellClassName: "name-column--cell" },
+        { field: "img", headerName: "IMG", flex: 0.6, cellClassName: "name-column--cell", sortable: false },
         { field: "ref.number", headerName: "REF.NUMBER", flex: 0.7 },
         { field: "name", headerName: "NAME", flex: 0.5 },
         { field: "price", headerName: "PRICE", flex: 0.5 },
@@ -54,7 +56,7 @@ const Products = () => {
             flex: 1.3,
             renderCell: (params) => (
                 <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-    <Button variant="outlined" onClick={() => handleEdit(params.id)} sx={{ p: '8px', minWidth: '90px' }}>
+    <Button variant="outlined" onClick={() => handleEditVariationsClick(params)} sx={{ p: '8px', minWidth: '90px' }}>
         Edit Variation
     </Button>
     <IconButton>
