@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme, IconButton, Button } from "@mui/material";
+import { Box, Typography, useTheme, IconButton, Button, Modal, FormControlLabel, TextField } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../theme";
 import Sidebar from "../components/Sidebar";
@@ -8,10 +8,23 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import DownloadIcon from '@mui/icons-material/Download';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditNoteIcon from '@mui/icons-material/EditNote';
+import { useState } from 'react';
+import ProductDetailsForm from "../components/ProductDetailsForm";
 
 const Products = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.colorMode);
+    const [selectedRow, setSelectedRow] = useState(null);
+    const [openModal, setOpenModal] = useState(false);
+
+    const handleRowClick = (id) => {
+        setSelectedRow(id);
+        setOpenModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setOpenModal(false);
+    };
 
     const columns = [
         { field: "img", headerName: "IMG", flex: 0.6, cellClassName: "name-column--cell" },
