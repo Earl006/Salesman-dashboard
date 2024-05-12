@@ -10,12 +10,17 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import React, { useState } from 'react';
 import ProductDetailsForm from "../components/ProductDetailsForm";
+import EditVariationsForm from "../components/EditVariationsForm"; 
+
+
 
 const Products = () => {
     const theme = useTheme();
     const colors = tokens(theme.palette.colorMode);
     const [selectedRow, setSelectedRow] = useState(null);
     const [openModal, setOpenModal] = useState(false);
+    const [openEditVariationsModal, setOpenEditVariationsModal] = useState(false); // State for "Edit Variations" form
+
 
     const handleRowClick = (params) => {
         setSelectedRow(params.id);
@@ -24,6 +29,15 @@ const Products = () => {
 
     const handleCloseModal = () => {
         setOpenModal(false);
+    };
+
+    const handleEditVariationsClick = (params) => {
+        setSelectedRow(params.id);
+        setOpenEditVariationsModal(true);
+    };
+
+    const handleCloseEditVariationsModal = () => {
+        setOpenEditVariationsModal(false);
     };
 
     const columns = [
@@ -92,6 +106,8 @@ const Products = () => {
                 </Box>
                 
             <ProductDetailsForm open={openModal} handleClose={handleCloseModal} /> 
+            <EditVariationsForm open={openEditVariationsModal} handleClose={handleCloseEditVariationsModal} /> 
+
                 
             </Box>
         </Box>
